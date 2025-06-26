@@ -12,7 +12,7 @@ import { Cloud } from "./Cloud";
 import { TextSection } from "./TextSection";
 
 const LINE_NB_POINTS = 1000;
-const CURVE_DISTANCE = 250;
+const CURVE_DISTANCE = 180;
 const CURVE_AHEAD_CAMERA = 0.008;
 const CURVE_AHEAD_AIRPLANE = 0.02;
 const AIRPLANE_MAX_ANGLE = 35;
@@ -333,26 +333,26 @@ Have a seat and enjoy the ride!`,
       );
 
       if (distance < FRICTION_DISTANCE) {
-        friction = Math.max(distance / FRICTION_DISTANCE, 0.1);
+        friction = Math.max(distance / FRICTION_DISTANCE, 0.3);
         const targetCameraRailPosition = new Vector3(
           (1 - distance / FRICTION_DISTANCE) * textSection.cameraRailDist,
           0,
           0
         );
-        cameraRail.current.position.lerp(targetCameraRailPosition, delta);
+        cameraRail.current.position.lerp(targetCameraRailPosition, delta * 3);
         resetCameraRail = false;
       }
     });
     if (resetCameraRail) {
       const targetCameraRailPosition = new Vector3(0, 0, 0);
-      cameraRail.current.position.lerp(targetCameraRailPosition, delta);
+      cameraRail.current.position.lerp(targetCameraRailPosition, delta * 3);
     }
 
     // CALCULATE LERPED SCROLL OFFSET
     let lerpedScrollOffset = THREE.MathUtils.lerp(
       lastScroll.current,
       scrollOffset,
-      delta * friction
+      delta * friction * 0.5
     );
     // PROTECT BELOW 0 AND ABOVE 1
     lerpedScrollOffset = Math.min(lerpedScrollOffset, 1);
@@ -364,7 +364,7 @@ Have a seat and enjoy the ride!`,
     const curPoint = curve.getPoint(lerpedScrollOffset);
 
     // Follow the curve points
-    cameraGroup.current.position.lerp(curPoint, delta * 24);
+    cameraGroup.current.position.lerp(curPoint, delta * 12);
 
     // Make the group look ahead on the curve
 
@@ -379,7 +379,7 @@ Have a seat and enjoy the ride!`,
       .subVectors(curPoint, lookAtPoint)
       .normalize();
 
-    const lookAt = currentLookAt.lerp(targetLookAt, delta * 24);
+    const lookAt = currentLookAt.lerp(targetLookAt, delta * 12);
     cameraGroup.current.lookAt(
       cameraGroup.current.position.clone().add(lookAt)
     );
@@ -421,7 +421,7 @@ Have a seat and enjoy the ride!`,
         angle
       )
     );
-    airplane.current.quaternion.slerp(targetAirplaneQuaternion, delta * 2);
+    airplane.current.quaternion.slerp(targetAirplaneQuaternion, delta * 1);
 
     if (
       cameraGroup.current.position.z <

@@ -91,8 +91,8 @@ export const Overlay = () => {
 
           {showInterestGroups && (
             <div className="interest-groups">
-              <h2>Interest Groups</h2>
-              
+              <h2>Join An Interest Group</h2>
+
               <div className="groups-grid">
                 <div className="group-category">
                   <h3>Relationship & Family Life</h3>
