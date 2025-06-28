@@ -129,7 +129,7 @@ body {
   font-family: "DM Serif Display", serif;
   font-size: 1.25rem;
   letter-spacing: 0.25rem;
-  color: #3535cc;
+  color: greenyellow;
   border-radius: 32px;
   cursor: pointer;
   display: inline-block;
@@ -155,7 +155,7 @@ body {
 
 .explore:before {
   content: "";
-  background: #3535cc;
+  background: greenyellow;
   position: absolute;
   width: 0%;
   bottom: 0;
@@ -218,7 +218,7 @@ body {
   font-family: "DM Serif Display", serif;
   font-size: 1.25rem;
   letter-spacing: 0.25rem;
-  color: #3535cc;
+  color: greenyellow;
   border-radius: 32px;
   cursor: pointer;
   display: inline-block;
@@ -243,7 +243,7 @@ body {
 
 .interest-groups-btn:before {
   content: "";
-  background: #3535cc;
+  background: greenyellow;
   position: absolute;
   width: 0%;
   bottom: 0;
@@ -353,14 +353,14 @@ body {
 
 .schedule {
   font-size: 0.75rem;
-  color: #3535cc;
+  color: greenyellow;
   margin-bottom: 1rem;
   font-weight: 500;
   font-family: "Inter", sans-serif;
   background: rgba(53, 53, 204, 0.15);
   padding: 0.4rem 0.6rem;
   border-radius: 6px;
-  border-left: 3px solid #3535cc;
+  border-left: 3px solid greenyellow;
   display: block;
   text-align: center;
 }
@@ -389,7 +389,7 @@ body {
 
 .group-category li:before {
   content: "•";
-  color: #3535cc;
+  color: greenyellow;
   font-size: 0.8rem;
   position: absolute;
   left: 0;
@@ -397,7 +397,7 @@ body {
 }
 
 .group-category li:hover {
-  color: #3535cc;
+  color: greenyellow;
   cursor: pointer;
 }
 

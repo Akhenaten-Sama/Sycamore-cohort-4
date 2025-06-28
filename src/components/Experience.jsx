@@ -12,7 +12,7 @@ import { Cloud } from "./Cloud";
 import { TextSection } from "./TextSection";
 
 const LINE_NB_POINTS = 1000;
-const CURVE_DISTANCE = 180;
+const CURVE_DISTANCE = 120;
 const CURVE_AHEAD_CAMERA = 0.008;
 const CURVE_AHEAD_AIRPLANE = 0.02;
 const AIRPLANE_MAX_ANGLE = 35;
@@ -45,17 +45,17 @@ export const Experience = () => {
       {
         cameraRailDist: -1,
         position: new Vector3(
-          curvePoints[1].x - 3,
+          curvePoints[1].x - 2,
           curvePoints[1].y,
           curvePoints[1].z
         ),
         subtitle: `Welcome to Sycamore,
-Have a seat and enjoy the ride!`,
+Have a seat and enjoy the flight!`,
       },
       {
-        cameraRailDist: 1.5,
+        cameraRailDist: 1.2,
         position: new Vector3(
-          curvePoints[2].x + 2,
+          curvePoints[2].x + 1.5,
           curvePoints[2].y,
           curvePoints[2].z
         ),
@@ -65,7 +65,7 @@ Have a seat and enjoy the ride!`,
       {
         cameraRailDist: -1,
         position: new Vector3(
-          curvePoints[3].x - 3,
+          curvePoints[3].x - 2,
           curvePoints[3].y,
           curvePoints[3].z
         ),
@@ -73,11 +73,11 @@ Have a seat and enjoy the ride!`,
         subtitle: `Set apart from the world, we experience a culture shift of the ordinary being expressed and experienced supernaturally.`,
       },
       {
-        cameraRailDist: 1.5,
+        cameraRailDist: 1.2,
         position: new Vector3(
-          curvePoints[4].x + 3.5,
+          curvePoints[4].x + 2.5,
           curvePoints[4].y,
-          curvePoints[4].z - 12
+          curvePoints[4].z - 8
         ),
         title: "Beyond the Noise",
         subtitle: `Beyond the noise of the world, we partake in a community that leverages fixing our gaze on Jesus, and in living life, we reach for fullness in all of its expressions and dimensions`,
@@ -85,12 +85,13 @@ Have a seat and enjoy the ride!`,
        {
         cameraRailDist: -1,
         position: new Vector3(
-          curvePoints[5].x + 3.5,
+          curvePoints[5].x + 2.5,
           curvePoints[5].y,
-          curvePoints[5].z - 12
+          curvePoints[5].z - 8
         ),
         title: "Beyond Four Walls",
-        subtitle: `Beyond the noise of the world, we partake in a community that leverages fixing our gaze on Jesus, and in living life, we reach for fullness in all of its expressions and dimensions`,
+        subtitle: `The Church Beyond Four Walls, is a place where Christ in us the hope of glory permeates all our experiences
+The Church Beyond Four Walls is a community of believers reaching to harness purpose and destiny.`,
       },
     ];
   }, []);
